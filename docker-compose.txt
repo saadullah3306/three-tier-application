@@ -1,0 +1,52 @@
+    1  sudo apt update && sudo apt install docker.io -y && sudo apt install docker-compose
+    2  git clone https://github.com/saadullah3306/three-tier-application.git
+    3  ls
+    4  cd three-tier-application
+    5  ls
+    6  cd bakend
+    7  cd backend
+    8  cd ..
+    9  cd frontend
+   10  nano dockerfile
+   11  cd ..
+   12  cd backend
+   13  ls
+   14  nano dockerfile
+   15  cd ..
+   16  nano docker-compose.yml
+   17  cd frontend
+   18  ls
+   19  nano src/App.js
+   20  clear
+   21  cd ..
+   22  cd backend
+   23  nano ./env
+   24  nano .env
+   25  CD ..
+   26  cd ..
+   27  ls
+   28  sudo docker-compose up
+   29  cd backend
+   30  nano dockerfile
+   31  cd ..
+   32  sudo docker-compose up -d
+   33  nano docker-compose.yml
+   34  cd backend
+   35  ls
+   36  nano .env
+   37  clear
+   38  cd ..
+   39  sudo docker-compose up -d
+   40  cd backend
+   41  nano env
+   42  nano .env
+   43  cd ..
+   44  sudo docker-compose up -d
+   45  docker compose down -v
+   46  docker system prune -af
+   47  sudo docker-compose down
+   48  docker compose build backend
+   49  sudo docker-compose build 
+   50  sudo docker-compose up -d
+   51  history
+   52  history > docker-compose.txt
