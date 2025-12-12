@@ -1,21 +1,31 @@
-import React, { useEffect, useState } from 'react';
-
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [name, setName] = useState('');
-  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://34.203.28.6:5000'
+  const [name, setName] = useState("");
+
+  
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://50.19.24.25:5000';
+
 
   const fetchItems = async () => {
-    const res = await axios.get(`${API_BASE_URL}/api/items`);
-    setItems(res.data);
+    try {
+      const res = await axios.get(`${API_BASE_URL}/api/items`);
+      setItems(res.data);
+    } catch (err) {
+      console.error("Error fetching items:", err);
+    }
   };
 
   const addItem = async () => {
-    await axios.post(`${API_BASE_URL}/api/items`, { name });
-    setName('');
-    fetchItems();
+    try {
+      await axios.post(`${API_BASE_URL}/api/items`, { name });
+      setName("");
+      fetchItems();
+    } catch (err) {
+      console.error("Error adding item:", err);
+    }
   };
 
   useEffect(() => {
@@ -23,16 +33,19 @@ function App() {
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: "20px" }}>
       <h2>Three-Tier App</h2>
+
       <input
         value={name}
-        onChange={e => setName(e.target.value)}
+        onChange={(e) => setName(e.target.value)}
         placeholder="Enter item"
       />
+
       <button onClick={addItem}>Add</button>
+
       <ul>
-        {items.map(item => (
+        {items.map((item) => (
           <li key={item._id}>{item.name}</li>
         ))}
       </ul>

@@ -1,0 +1,33 @@
+    1  sudo apt update && sudo apt install docker.io && sudo apt install docker-compose
+    2  git clone https://github.com/saadullah3306/three-tier-application.git
+    3  ls
+    4  cd three-tier-application
+    5  ls
+    6  cd frontend
+    7  ls
+    8  nano dockerfile
+    9  clear
+   10  cd ..
+   11  cd backend
+   12  nano dockerfile
+   13  cd ..
+   14  nano docker-compose.yml
+   15  sudo docker-compose up -d
+   16  cd frontend
+   17  nano src/App.js
+   18  clear
+   19  cd ..
+   20  sudo docker-compose down --volumes --remove-orphans
+   21  sudo docker-compose build
+   22  sudo docker-compose up -d
+   23  cd frontend
+   24  nano src/App.js
+   25  clear
+   26  sudo docker-compose down --volumes --remove-orphans
+   27  sudo docker-compose build
+   28  sudo docker-compose up -d
+   29  cd ..
+   30  sudo docker-compose down --volumes --remove-orphans
+   31  sudo docker-compose build
+   32  sudo docker-compose up -d
+   33  history > docker-compose-multistage-secure.txt
