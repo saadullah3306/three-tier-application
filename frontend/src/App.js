@@ -6,7 +6,7 @@ function App() {
   const [name, setName] = useState("");
 
   
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://50.19.24.25:5000';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://54.84.65.227:5000';
 
 
   const fetchItems = async () => {
