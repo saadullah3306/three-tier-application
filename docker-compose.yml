@@ -38,7 +38,7 @@ services:
       retries: 3
 
   frontend:
-  image:ghcr.io/saadullah3306/three-tier-application-frontend:latest
+    image: ghcr.io/saadullah3306/three-tier-application-frontend:latest
     container_name: frontend
     ports:
       - "3000:3000"
