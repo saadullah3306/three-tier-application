@@ -45,7 +45,7 @@ pipeline {
         }
         
         stage('Push Images to ECR') {
-            steps {
+            steps { 
                 sh """
                 docker push ${env.FRONTEND_TAG}
                 docker push ${env.BACKEND_TAG}
