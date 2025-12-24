@@ -18,10 +18,10 @@ services:
       retries: 3
 
   backend:
-    image: 534589602727.dkr.ecr.us-east-1.amazonaws.com/three-tier-application-backend:latest
+    image: ${BACKEND_IMAGE}
     container_name: backend
     ports:
-      - "5000:5000"
+      - "5002:5000"
     depends_on:
       - database
     env_file:
@@ -38,10 +38,11 @@ services:
       retries: 3
 
   frontend:
-    image:534589602727.dkr.ecr.us-east-1.amazonaws.com/three-tier-application-frontend:latest
+    image:${FRONTEND_IMAGE}
+
     container_name: frontend
     ports:
-      - "3000:3000"
+      - "3002:3000"
     depends_on:
       - backend
     restart: always
